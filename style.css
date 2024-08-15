@@ -1,0 +1,163 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  user-select: none;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 25rem;
+}
+
+.display {
+  user-select: none;
+  width: 233px;
+  height: 44px;
+  color: white;
+  position: absolute;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.matrix {
+  user-select: none;
+  width: 90%;
+  max-width: 25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  aspect-ratio: 1/1;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box0,
+.box1,
+.box3,
+.box4 {
+  border-right: 4px solid white;
+  border-bottom: 4px solid white;
+}
+
+.box2,
+.box5 {
+  border-bottom: 4px solid white;
+}
+
+.box6,
+.box7 {
+  border-right: 4px solid white;
+}
+
+.win {
+  color: rgb(52, 226, 52);
+}
+
+.bottom {
+  transform: translate(-0.9rem);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 0;
+  margin-top: 1.5rem;
+}
+
+.bottomp1,
+.bottomp2 {
+  user-select: none;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+}
+
+.reset {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #3e3e3e;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.active {
+  display: flex;
+}
+
+.bg {
+  background-color: #3e3e3e;
+  border-radius: 5px;
+}
+
+.reset:hover {
+  background-color: #575757;
+}
+
+@keyframes blinkAnimation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.text.win {
+  color: rgb(52, 226, 52);
+  animation: blinkAnimation 0.6s infinite;
+}
+
+.matrix.draw {
+  animation: blinkAnimation 0.6s infinite;
+}
+
+.text {
+  display: inline-block;
+}
